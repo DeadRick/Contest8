@@ -18,15 +18,16 @@ internal class Kikstarter
 
         for (int i = 0; i < hipsters.Length; i++)
         {
+            int i_1 = i;
             getGetGet += delegate
             {
-                Hipster man = hipsters[i];
-                if (man.Donate + numOfHipsters[i] > man.Money) 
+                Hipster man = hipsters[i_1];
+                if (man.Donate + numOfHipsters[i_1] > man.Money) 
                 {
-                    numOfHipsters[i] += man.Money - numOfHipsters[i];
+                    numOfHipsters[i_1] += man.Money - numOfHipsters[i_1];
                 } else
                 {
-                    numOfHipsters[i] += man.Donate;
+                    numOfHipsters[i_1] += man.Donate;
                 }
             };
         }

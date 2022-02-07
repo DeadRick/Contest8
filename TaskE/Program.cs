@@ -1,4 +1,5 @@
 ﻿using System;
+using static StackCalculator;
 
 internal class Program
 {

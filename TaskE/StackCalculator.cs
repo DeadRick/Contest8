@@ -1,9 +1,21 @@
 using System;
 
-internal class StackCalculator
+#pragma warning disable
+public delegate double Calculator(ref double num);
+
+internal class StackCalculator : Program
 {
+
+
+
     public static void CreateRules(int[] args)
     {
-        throw new NotImplementedException();
+
+        foreach (var func in args)
+        {
+            if (func == 0) { calculator += (ref double x) => x = Math.Sin(x); }
+            if (func == 1) { calculator += (ref double x) => x = Math.Cos(x); }
+            if (func == 2) { calculator += (ref double x) => x = Math.Tan(x); }
+        }
     }
 }
