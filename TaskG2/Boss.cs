@@ -2,8 +2,7 @@ using System;
 
 internal class Boss : Mob
 {
-
-    public Boss(int hp, int attack) : base(hp, attack)
+    public Boss(int hp, int attack) : base (hp, attack)
     {
     }
 

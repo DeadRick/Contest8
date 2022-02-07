@@ -1,22 +1,37 @@
 using System;
 
-internal class Mob
+internal abstract class Mob : Program
 {
     public int HP { get; set; }
-    public int Attack { get; set; }
+    public int Attack { get; }
 
     public Mob(int hp, int attack)
     {
-        throw new NotImplementedException();
+        HP = hp;
+        Attack = attack;
     }
 
     public bool IsDead(Mob other)
     {
-        throw new NotImplementedException();
+        if (other.HP > 0)
+        {
+            return true;
+        } return false;
     }
 
-    public void AttackMob(Mob other)
+    public virtual void AttackMob(Mob boss)
     {
-        throw new NotImplementedException();
+        while (IsDead(this) && IsDead(boss))
+        {
+            Console.WriteLine($"{this.ToString()} attacked {boss.ToString()}");
+            Console.WriteLine($"{boss.ToString()} attacked {this.ToString()}");
+            this.HP -= boss.Attack;
+            boss.HP -= this.Attack;
+        }
+    }
+
+    public override string ToString()
+    {
+        return $"{this.GetType()} with HP = {HP} and attack = {Attack}";
     }
 }

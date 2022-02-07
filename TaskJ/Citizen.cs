@@ -1,20 +1,34 @@
 using System;
 
-internal class Citizen
+internal class Citizen : IOptimist, IPessimist
 {
-
+    public int Salary { get; set; }
     public Citizen(int predictedValue)
     {
-        throw new NotImplementedException();
+        Salary = predictedValue;
+    }
+
+    double IOptimist.GetForecast()
+    {
+        return Salary * 2.0;
+    }
+
+    double IPessimist.GetForecast()
+    {
+        return Salary * 0.6;
     }
 
     public double GetForecast()
     {
-        throw new NotImplementedException();
+        return Salary + Salary * 0.1;
     }
 
     internal static Citizen Parse(string input)
     {
-        throw new NotImplementedException();
+        if (int.TryParse(input, out int n))
+        {
+            return new Citizen(n);
+        }
+        throw new ArgumentException("Incorrect citizen");
     }
 }

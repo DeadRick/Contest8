@@ -5,7 +5,10 @@ internal static class Methods
 {
     public static int FindBestBiathlonistValue(List<Sportsman> sportsmen)
     {
-        throw new NotImplementedException();
+        foreach (var sprot in sportsmen)
+        {
+
+        }
     }
 
     public static int FindBestShooterValue(List<Sportsman> sportsmen)

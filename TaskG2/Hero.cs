@@ -1,7 +1,7 @@
 using System;
 
 internal class Hero : Mob
-{ 
+{
     public Hero(int hp, int attack) : base(hp, attack)
     {
     }
