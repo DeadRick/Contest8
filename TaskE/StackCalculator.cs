@@ -6,8 +6,6 @@ public delegate double Calculator(ref double num);
 internal class StackCalculator : Program
 {
 
-
-
     public static void CreateRules(int[] args)
     {
 
